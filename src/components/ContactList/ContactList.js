@@ -3,7 +3,7 @@ import shortid from "shortid";
 import PropTypes from "prop-types";
 import "./ContactList.css";
 import { connect } from "react-redux";
-import * as actions from "../../redux/contacts-actions";
+import * as actions from "../../redux/contacts/contacts-actions";
 
 const ContactList = ({ items, onDelete }) => (
   <ol>
@@ -31,7 +31,6 @@ const getVisibleContacts = (allContacts, filter) => {
 
 const mapStateToProps = ({ contacts: { items, filter } }) => ({
   items: getVisibleContacts(items, filter),
-  filter,
 });
 
 const mapDispatchToProps = (dispatch) => ({
